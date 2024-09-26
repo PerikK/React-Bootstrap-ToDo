@@ -37,8 +37,8 @@ export default function ToDoApp() {
 
     return (
         <div>
-            <ToDoInput />
-            <ToDoList />
+            <ToDoInput onSubmit={addTodo} />
+            <ToDoList todos={todos} />
         </div>
     )
 }
