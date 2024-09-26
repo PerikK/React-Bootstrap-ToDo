@@ -28,7 +28,6 @@ export default function ToDoInput({ onSubmit, initialValue = '', isEditing = fal
                 <Button type="submit">
                     {isEditing ? <Pencil /> : <Plus />}
                     {isEditing ? " Update" : "Add"}</Button>
-                {/* <Button type="submit"><Plus/>Add</Button> */}
             </InputGroup>
 
         </Form>
