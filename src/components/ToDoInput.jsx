@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { Form, Button, InputGroup, FormControl } from "react-bootstrap"
-import { Plus } from "react-bootstrap-icons"
+import { Plus, Pencil } from "react-bootstrap-icons"
 
 
-export default function ToDoInput({ onSubmit, initialValue = '' }) {
+export default function ToDoInput({ onSubmit, initialValue = '', isEditing = false }) {
     const [input, setInput] = useState(initialValue)
     
     
@@ -25,7 +25,10 @@ export default function ToDoInput({ onSubmit, initialValue = '' }) {
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                 />
-                <Button type="submit"><Plus/>Add</Button>
+                <Button type="submit">
+                    {isEditing ? <Pencil /> : <Plus />}
+                    {isEditing ? " Update" : "Add"}</Button>
+                {/* <Button type="submit"><Plus/>Add</Button> */}
             </InputGroup>
 
         </Form>

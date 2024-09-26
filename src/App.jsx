@@ -7,7 +7,7 @@ function App() {
     <>
       <Container>
         <h1 className="py-3">
-          ToDo App
+          Your To Do's
         </h1>
         <ToDoApp/>
       </Container>

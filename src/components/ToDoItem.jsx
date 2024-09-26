@@ -27,7 +27,8 @@ export default function ToDoItem({
 				<div className='d-flex w-100'>
 					<ToDoInput
 						onSubmit={handleUpdate}
-						initialValue={todo.text}
+                        initialValue={todo.text}
+                        isEditing={true}
 					/>
 					<Button
 						variant='secondary'
