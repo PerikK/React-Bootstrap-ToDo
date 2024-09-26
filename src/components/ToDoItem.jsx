@@ -1,5 +1,7 @@
-export default function ToDoItem() {
+export default function ToDoItem({todo}) {
     return (
-        <h2>Placeholder</h2>
+        <h2>
+            {todo.text}
+        </h2>
     )
 }

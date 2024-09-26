@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import ToDoInput from './ToDoInput'
-import ToDoList from './ToDoList'
+import ToDoInput from './ToDoInput.jsx'
+import ToDoList from './ToDoList.jsx'
 
 export default function ToDoApp() {
     const [todos, setTodos] = useState([])
 
     const addTodo = (input) => {
         const newTodo = {
-            id: 1,
+            id: Date.now(),
             text: input,
             completed: false
         }

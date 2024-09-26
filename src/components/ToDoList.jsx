@@ -1,5 +1,11 @@
-export default function ToDoList() {
+import ToDoItem from './ToDoItem.jsx'
+
+export default function ToDoList({ todos }) {
     return (
-        <h2>Placeholder</h2>
+        <div>
+            {todos.map(todo => (
+                <ToDoItem todo={todo} key={todo.id} />
+            ))}
+        </div>
     )
 }

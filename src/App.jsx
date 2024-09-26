@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap"
-import ToDoApp from "./components/ToDoApp"
+import ToDoApp from "./components/ToDoApp.jsx"
 
 function App() {
 
