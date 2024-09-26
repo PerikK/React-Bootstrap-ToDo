@@ -1,3 +1,3 @@
 # React + Vite + Bootstrap ToDo
 
-The cumpulsory ToDo app using Bootstrap in React
+The compulsory ToDo app using Bootstrap in React
