@@ -14,11 +14,13 @@ export default function ToDoApp() {
         setTodos(prevTodos => [...prevTodos, newTodo])
     }
     
-    const deleteTodo = (id) => {
-        const filteredTodos = todos.filter(todo => todo.id !== id)
-        setTodos(filteredTodos)
-    }
-
+    const editTodo = (id, newInput) => {
+            const updatedTodos = todos.map(todo => (
+            todo.id === id ? {...todo, text: newInput}: todo
+        ))
+        setTodos(updatedTodos)
+    }    
+    
     const toggleComplete = (id) => {
         const updatedTodos = todos.map(todo => (
             todo.id === id ? {...todo, completed: !todo.completed}: todo
@@ -26,19 +28,25 @@ export default function ToDoApp() {
         setTodos(updatedTodos)
     }
     
-    const editTodo = (id, newInput) => {
-            const updatedTodos = todos.map(todo => (
-            todo.id === id ? {...todo, text: newInput}: todo
-        ))
-        setTodos(updatedTodos)}    
+    const deleteTodo = (id) => {
+        const confirmDelete = window.confirm('Are you sure you want to delete this To Do?')
+
+        if (confirmDelete) {            
+            const filteredTodos = todos.filter(todo => todo.id !== id)
+            setTodos(filteredTodos)
+        }
+    }
     
-
-
 
     return (
         <div>
             <ToDoInput onSubmit={addTodo} />
-            <ToDoList todos={todos} />
+            <ToDoList
+                todos={todos}
+                editTodo={editTodo}
+                deleteTodo={deleteTodo}
+                toggleComplete={toggleComplete}
+            />
         </div>
     )
 }

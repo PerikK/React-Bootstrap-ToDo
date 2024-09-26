@@ -3,8 +3,8 @@ import { Form, Button, InputGroup, FormControl } from "react-bootstrap"
 import { Plus } from "react-bootstrap-icons"
 
 
-export default function ToDoInput({onSubmit}) {
-    const [input, setInput] = useState('')
+export default function ToDoInput({ onSubmit, initialValue = '' }) {
+    const [input, setInput] = useState(initialValue)
     
     
     const handleSubmit = (e) => {
